@@ -1,0 +1,45 @@
+img, div, button{
+	position: fixed;
+}
+
+.attackButton {
+		width: 100px;
+		height: 40px;
+    left: calc(50vw - 50px);
+    top: 130px;
+    font-size: 20px;
+}
+.poHpBar {
+    left: 20vw;
+    top: 150px;
+    text-align: center;
+}
+.pinkSpiderHpBar {
+    right: 20vw;
+    top: 150px;
+    text-align: center;
+}
+.winTextDiv {
+		width: 200px;
+    left: calc(50vw - 100px);
+    top: 25vh;
+		text-align: center;
+}
+.versusDiv {
+		width: 300px;
+    left: calc(50vw - 150px);
+    top: 30vh;
+    font-size: 180px;
+    user-select: none;
+    text-align: center;
+}
+.pinkSpiderImg {
+    width: 15vw;
+    bottom: 47vh;
+    right: 18vw;
+}
+.poImg {
+    width: 20vw;
+    bottom: 45vh;
+    left: 15vw;
+}

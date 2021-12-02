@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+	let list = [1, 4, 7,1,3,78,2,1,]
+
+
+	let biler = [
+		{
+			navn: "bil1",
+			merke: "Volvo",
+			model: "V70",
+			motor: {
+				type: "V6",
+				navn: "motor1",
+				drivstoffType: "diesel",
+			}
+		},
+		{
+			navn: "bil2",
+			merke: "BMW",
+			model: "i4",
+			motor: {
+				type: "elektrisk",
+				navn: "motor2",
+				drivstoffType: "strømm",
+			}
+		}
+	]
+
+	let motorBil1 = biler[0].motor;
+
+
+	let motorer = [
+		biler[0].motor.navn,
+		biler[1].motor.navn
+	];
+
+
+	let personer = [1,2,3,4,5,6,7,8]
+
+
+	console.log(personer);
+					// i = 0 - 5
+	for(let i = 2; i < personer.length - 2; i++){
+		personer[i] += 5;
+		if(personer[i] > 10){
+			personer[i] -= 10;
+		}
+		// Some other code
+	}
+	console.log(personer);
+	// some code
+
+
+
+</script>
+
+</html>
