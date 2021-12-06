@@ -1,0 +1,49 @@
+trykker angrepsknapp;
+if (begge fortsatt kan sloss){
+  if(valgt angrep er "skip"){
+    if(spiller timer == 0){
+      dobbeltskjekk at
+      spilleren vil skippe
+      selv uten et lagret angrep
+    }
+    else {
+      spiller timer --;
+      ai timer--;
+      if(spiller timer == 0){
+        spiller gjør lagret angrep;
+      }
+      if(ai timer == 0){
+        ai angriper;
+        ai timer = random;
+      }
+    }
+  } else {
+    if(spiller timer == 0){
+      lagre valgt angrep;
+      spiller timer = angrepets tid;
+      spiller timer --;
+      ai timer--;
+    }
+    else{
+      fortell spilleren at
+      de allerede har et lagret
+      angrep og spør om de
+      ønsker å skippe i stedenfor,
+      eventuelt velg det nye
+      angrepet og forsink
+      angrepet ytterligere;
+      if(skipper){
+        spiller timer --; // trenger ikke ai timer-- da det vil skje uansett
+      }
+      ai timer--;
+    }
+    if(ai timer == 0){
+        ai angriper;
+        ai timer = random;
+      }
+  }
+}
+
+Check winner;
+display winner;
+updateView();
