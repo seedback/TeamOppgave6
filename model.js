@@ -19,6 +19,7 @@ const model = {
 		],
 		turnTimer: 3,
 		currentAttack: 0,
+		info: '',
 	},
 	pinkSpider: {
 		name: "Pink Spider",
@@ -33,6 +34,7 @@ const model = {
 		],
 		turnTimer: 3,
 		currentAttack: 0,
+		info: '',
 	},
 
 	winTxt: '',

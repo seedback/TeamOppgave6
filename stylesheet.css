@@ -1,33 +1,85 @@
+.bodySubstitute {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	margin: -8px;
+	background-image: linear-gradient(rgb(64, 180, 200),rgb(197, 233, 253), rgb(92, 175, 86), rgb(148, 248, 128), rgb(106, 189, 100),rgb(106, 189, 100));
+	filter: blur(50px)
+}
+
 img, div, button, svg{
 	position: fixed;
+}
+
+.attackImg1{
+	top: 200px;
+  left: 31vw;
+	z-index: 150;
+}
+
+.attackImg1:hover + svg>circle{
+	fill:rgb(114, 103, 187);
 }
 
 .attackButton1 {
     top: 200px;
     left: 31vw;
-		fill: white;
+		z-index: 100;
 }
 
-.attackButton1:hover{
+.attackButton1>circle{
+	fill: white;
+}
+
+.attackButton1>circle:hover{
 	fill:rgb(114, 103, 187);
+}
+
+.attackImg2{
+	top: 306px;
+    left: 33vw;
+	z-index: 150;
+}
+
+.attackImg2:hover + svg>circle{
+	fill:yellow;
 }
 
 .attackButton2 {
     top: 306px;
     left: 33vw;
-		fill: white;
+		z-index: 100;
 }
-.attackButton2:hover{
+
+.attackButton2>*{
+	fill: white;
+}
+
+.attackButton2>*:hover{
 	fill:yellow;
 }
 
+.skipImg{
+	top: 412px;
+  left: 31vw;
+	z-index: 150;
+}
+
+.skipImg:hover + svg>circle{
+	fill:lawngreen;
+}
 
 .skipButton {
-    top: 412px;
-    left: 31vw;
-		fill: white;
+	top: 412px;
+	left: 31vw;
+	z-index: 100;
 }
-.skipButton:hover{
+
+.skipButton>*{
+	fill: white;
+}
+
+.skipButton>*:hover{
 	fill:lawngreen;
 }
 
@@ -56,13 +108,13 @@ img, div, button, svg{
 }
 
 .poHpBar {
-    left: 20vw;
-    top: 150px;
+    left: 21vw;
+    top: 130px;
     text-align: center;
 }
 .pinkSpiderHpBar {
-    right: 20vw;
-    top: 150px;
+    right: 23vw;
+    top: 130px;
     text-align: center;
 }
 .winTextDiv {
@@ -75,7 +127,7 @@ img, div, button, svg{
 		width: 300px;
     left: calc(50vw - 150px);
     top: 30vh;
-    font-size: 180px;
+    font-size: 150px;
     user-select: none;
     text-align: center;
 }
@@ -89,4 +141,29 @@ img, div, button, svg{
     bottom: 45vh;
     left: 15vw;
 }
+.poTimer {
+	left: 12vw;
+	bottom: 40vh;
+	font-size: 40px;
+  text-align: center;
+  width: 25ch;
+	font-weight: bold;
+}
+.pinkSpiderTimer {
+	right: 24vw;
+	bottom: 40vh;
+	font-size: 40px;
+	font-weight: bold;
+}
 
+.poInfo {
+  top: 344px;
+  left: 39vw;
+  font-size: 40px;
+}
+
+.pinkSpiderInfo {
+  top: 344px;
+  right: 37vw;
+  font-size: 40px;
+}

@@ -2,6 +2,8 @@
 
 function doTurn(chosenAttack) {
 	if (model.po.health > 0 && model.pinkSpider.health > 0) {
+		model.po.info = '';
+		model.pinkSpider.info = '';
 		// Angrep -1 er skip
 		if (chosenAttack == -1) {
 			if (model.po.turnTimer == 0) {
@@ -13,8 +15,15 @@ function doTurn(chosenAttack) {
 			model.po.turnTimer--;
 			model.pinkSpider.turnTimer--;
 			if (model.po.turnTimer == 0) {
-				console.log(model.po.curentAttack);
-				attack(model.po, model.pinkSpider, model.po.currentAttack);
+				model.po.info = attack(model.po, model.pinkSpider, model.po.currentAttack);
+
+				if(model.po.health <= 0){
+					model.po.health = 0;
+				}
+				if(model.pinkSpider.health <= 0){
+					model.pinkSpider.health = 0;
+				}
+
 				updateView();
 				return;
 			}
@@ -38,7 +47,7 @@ function doTurn(chosenAttack) {
 		}			
 		if(model.pinkSpider.turnTimer <= 0){
 			console.log("test");
-			attack(model.pinkSpider, model.po, model.pinkSpider.currentAttack);
+			model.pinkSpider.info = attack(model.pinkSpider, model.po, model.pinkSpider.currentAttack);
 			model.pinkSpider.turnTimer = Math.floor(Math.random() * 4 + 2);
 		}
 	}
@@ -52,6 +61,17 @@ function doTurn(chosenAttack) {
 		model.winTxt = 'Po won!'
 	}
 
+	if(model.po.health <= 0){
+		model.po.health = 0;
+	}
+	if(model.pinkSpider.health <= 0){
+		model.pinkSpider.health = 0;
+	}
+	if(model.po.health < 15){
+		document.body.style.backgroundColor = 'red';
+	}
+	else{document.body.style.backgroundColor = 'white';}
+
 	if(model.po.turnTimer <= 0){
 		model.po.turnTimer = 0;
 	}
@@ -59,41 +79,7 @@ function doTurn(chosenAttack) {
 		model.pinkSpider.turnTimer = 0;
 	}
 
-
 	updateView();
-
-
-	//if (model.po.turnTimer <= 0) {
-	//	attack(model.po, model.pinkSpider, model.po.curentAttack);
-	//}
-
-	//if (model.pinkSpider.turnTimer <= 0) {
-	//	attack(model.pinkSpider, model.po, 0);
-	//	model.pinkSpider.turnTimer = 3;
-	//}
-
-	//if (model.po.health > 0 && model.pinkSpider.health > 0) {
-	//	model.po.turnTimer -= 1;
-	//	model.pinkSpider.turnTimer -= 1;
-	//}
-
-	//if (index >= 0) {
-	//	if (model.po.health <= 0) {
-	//		model.po.health = 0;
-	//		model.winTxt = 'Pink Spider won!'
-	//	}
-	//	if (model.pinkSpider.health <= 0) {
-	//		model.pinkSpider.health = 0;
-	//		model.winTxt = 'Po won!'
-	//	}
-
-	//	if (model.po.turnTimer <= 0) {
-	//		model.po.turnTimer = 3;
-	//	}
-
-	//}
-
-
 }
 
 
@@ -107,7 +93,7 @@ function attack(attacker, defender, attack) {
 
 		if (attacker.attacks[attack].missChance > rand) {
 			console.log("MISS!");
-			return "miss";
+			return "MISS!";
 		}
 
 		rand = Math.random() * 100;
@@ -115,11 +101,11 @@ function attack(attacker, defender, attack) {
 		if (attacker.attacks[attack].critChance > rand) {
 			console.log("CRIT!");
 			defender.health -= attacker.attacks[attack].attackPower * 2;
-			return "crit";
+			return "CRIT!";
 		}
 		else {
 			defender.health -= attacker.attacks[attack].attackPower;
-			return "hit";
+			return "HIT!";
 		}
 	}
 	else {
