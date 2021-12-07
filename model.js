@@ -32,7 +32,7 @@ const model = {
 				turns: 3,
 			},
 		],
-		turnTimer: 0,
+		turnTimer: Math.floor(Math.random() * 4 + 2),
 		currentAttack: 0,
 		info: '',
 	},
