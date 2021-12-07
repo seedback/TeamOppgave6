@@ -17,7 +17,7 @@ const model = {
 				turns: 1,
 			}
 		],
-		turnTimer: 3,
+		turnTimer: 0,
 		currentAttack: 0,
 		info: '',
 	},
@@ -32,7 +32,7 @@ const model = {
 				turns: 3,
 			},
 		],
-		turnTimer: 3,
+		turnTimer: 0,
 		currentAttack: 0,
 		info: '',
 	},
